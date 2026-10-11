@@ -17,13 +17,17 @@
     }
 
     :root {
-      --black: #000000;
+      /* Layered blacks & grays */
+      --pure-black: #000000;
+      --near-black: #0A0A0A;
+      --charcoal: #141414;
+      --dark-gray: #1E1E1E;
+      --mid-gray: #2A2A2A;
+      --soft-gray: #3A3A3A;
+      --text-gray: #A0A0A0;
       --white: #FFFFFF;
       --near-white: #F5F5F5;
       --light-gray: #E0E0E0;
-      --mid-gray: #888888;
-      --dark-gray: #1A1A1A;
-      --charcoal: #0D0D0D;
 
       --font-display: 'Oswald', sans-serif;
       --font-body: 'Inter', sans-serif;
@@ -42,7 +46,7 @@
       font-size: 17px;
       line-height: 1.75;
       color: var(--white);
-      background-color: var(--black);
+      background-color: var(--near-black);
     }
 
     h1, h2, h3, h4, h5 {
@@ -71,7 +75,7 @@
       left: 0;
       width: 100%;
       z-index: 1000;
-      background: rgba(0, 0, 0, 0.95);
+      background: rgba(10, 10, 10, 0.95);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--dark-gray);
@@ -79,7 +83,7 @@
     }
 
     header.scrolled {
-      background: rgba(0, 0, 0, 0.99);
+      background: rgba(10, 10, 10, 0.99);
       border-bottom-color: var(--mid-gray);
     }
 
@@ -146,12 +150,12 @@
 
     .menu-toggle:hover {
       background: var(--white);
-      color: var(--black);
+      color: var(--near-black);
     }
 
     /* ============ HERO ============ */
     .hero {
-      background: var(--black);
+      background: var(--near-black);
       padding: 160px 0 100px;
       position: relative;
       overflow: hidden;
@@ -168,10 +172,10 @@
       width: 45%;
       height: 100%;
       background-image:
-        linear-gradient(45deg, rgba(255,255,255,0.06) 25%, transparent 25%),
-        linear-gradient(-45deg, rgba(255,255,255,0.06) 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.06) 75%),
-        linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.06) 75%);
+        linear-gradient(45deg, rgba(255,255,255,0.04) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(255,255,255,0.04) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.04) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.04) 75%);
       background-size: 40px 40px;
       background-position: 0 0, 0 20px, 20px -20px, -20px 0;
       pointer-events: none;
@@ -185,13 +189,13 @@
       width: 100%;
       height: 10px;
       background-image:
-        linear-gradient(45deg, var(--white) 25%, transparent 25%),
-        linear-gradient(-45deg, var(--white) 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, var(--white) 75%),
-        linear-gradient(-45deg, transparent 75%, var(--white) 75%);
+        linear-gradient(45deg, var(--soft-gray) 25%, transparent 25%),
+        linear-gradient(-45deg, var(--soft-gray) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, var(--soft-gray) 75%),
+        linear-gradient(-45deg, transparent 75%, var(--soft-gray) 75%);
       background-size: 20px 20px;
       background-position: 0 0, 0 10px, 10px -10px, -10px 0;
-      background-color: var(--black);
+      background-color: var(--near-black);
       z-index: 3;
     }
 
@@ -244,7 +248,7 @@
 
     .hero-description {
       font-size: 1.1rem;
-      color: var(--near-white);
+      color: var(--text-gray);
       margin-bottom: 40px;
       max-width: 560px;
       font-weight: 400;
@@ -275,7 +279,7 @@
 
     .btn-white {
       background: var(--white);
-      color: var(--black);
+      color: var(--near-black);
     }
 
     .btn-white:hover {
@@ -287,11 +291,13 @@
     .btn-ghost {
       background: transparent;
       color: var(--white);
+      border-color: var(--mid-gray);
     }
 
     .btn-ghost:hover {
       background: var(--white);
-      color: var(--black);
+      color: var(--near-black);
+      border-color: var(--white);
       transform: translateY(-3px);
     }
 
@@ -307,7 +313,7 @@
       height: 420px;
       position: relative;
       border: 2px solid var(--white);
-      background: var(--charcoal);
+      background: var(--dark-gray);
     }
 
     .portrait-frame::before {
@@ -324,7 +330,7 @@
     .portrait-img {
       width: 100%;
       height: 100%;
-      background: var(--charcoal);
+      background: var(--dark-gray);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -350,10 +356,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 2px solid var(--black);
+      border: 2px solid var(--near-black);
       transition: var(--transition);
       z-index: 5;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
     }
 
     .qr-corner img {
@@ -365,7 +371,7 @@
 
     .qr-corner:hover {
       transform: scale(1.06);
-      box-shadow: 0 12px 32px rgba(255, 255, 255, 0.25);
+      box-shadow: 0 12px 32px rgba(255, 255, 255, 0.2);
     }
 
     .qr-label {
@@ -378,8 +384,8 @@
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--white);
-      background: var(--black);
-      border: 1px solid var(--white);
+      background: var(--pure-black);
+      border: 1px solid var(--soft-gray);
       padding: 4px 10px;
       white-space: nowrap;
       z-index: 6;
@@ -391,13 +397,13 @@
       position: relative;
     }
 
-    .section-black { background: var(--black); }
+    .section-black { background: var(--near-black); }
     .section-charcoal { background: var(--charcoal); }
-    .section-white { background: var(--white); color: var(--black); }
+    .section-white { background: var(--white); color: var(--near-black); }
     .section-white h1,
     .section-white h2,
     .section-white h3,
-    .section-white h4 { color: var(--black); }
+    .section-white h4 { color: var(--near-black); }
 
     .section-header {
       max-width: 780px;
@@ -407,11 +413,11 @@
     .section-rule {
       width: 64px;
       height: 3px;
-      background: var(--white);
+      background: var(--soft-gray);
       margin-bottom: 28px;
     }
 
-    .section-white .section-rule { background: var(--black); }
+    .section-white .section-rule { background: var(--near-black); }
 
     .section-title {
       font-size: 2.8rem;
@@ -421,16 +427,16 @@
       color: var(--white);
     }
 
-    .section-white .section-title { color: var(--black); }
+    .section-white .section-title { color: var(--near-black); }
 
     .section-desc {
       font-size: 1.1rem;
-      color: var(--near-white);
+      color: var(--text-gray);
       font-weight: 400;
       line-height: 1.8;
     }
 
-    .section-white .section-desc { color: var(--dark-gray); }
+    .section-white .section-desc { color: var(--mid-gray); }
 
     /* ============ ABOUT ============ */
     .about-grid {
@@ -442,7 +448,7 @@
 
     .about-content p {
       margin-bottom: 24px;
-      color: var(--near-white);
+      color: var(--text-gray);
       font-size: 1.05rem;
       font-weight: 400;
       line-height: 1.85;
@@ -453,27 +459,28 @@
     .about-content strong {
       color: var(--white);
       font-weight: 700;
-      border-bottom: 1px solid var(--mid-gray);
+      border-bottom: 1px solid var(--soft-gray);
     }
 
     .about-stats {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2px;
-      background: var(--black);
-      border: 2px solid var(--white);
+      background: var(--dark-gray);
+      border: 2px solid var(--dark-gray);
     }
 
     .stat-block {
-      background: var(--black);
+      background: var(--charcoal);
       padding: 36px 24px;
       text-align: center;
       transition: var(--transition);
+      border: 1px solid var(--mid-gray);
     }
 
     .stat-block:hover { background: var(--white); }
     .stat-block:hover .stat-number,
-    .stat-block:hover .stat-label { color: var(--black); }
+    .stat-block:hover .stat-label { color: var(--near-black); }
 
     .stat-number {
       font-family: var(--font-display);
@@ -492,7 +499,7 @@
       font-weight: 500;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--near-white);
+      color: var(--text-gray);
       transition: var(--transition);
     }
 
@@ -501,24 +508,25 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2px;
-      background: var(--black);
-      border: 2px solid var(--white);
+      background: var(--dark-gray);
+      border: 2px solid var(--dark-gray);
     }
 
     .skill-item {
-      background: var(--black);
+      background: var(--charcoal);
       padding: 48px 32px;
       transition: var(--transition);
       position: relative;
       overflow: hidden;
+      border: 1px solid var(--mid-gray);
     }
 
     .skill-item:hover { background: var(--white); }
     .skill-item:hover h4,
     .skill-item:hover p,
     .skill-item:hover .skill-icon,
-    .skill-item:hover .skill-number { color: var(--black); }
-    .skill-item:hover .skill-icon { border-color: var(--black); }
+    .skill-item:hover .skill-number { color: var(--near-black); }
+    .skill-item:hover .skill-icon { border-color: var(--near-black); }
     .skill-item:hover .skill-number { -webkit-text-stroke-color: var(--mid-gray); }
 
     .skill-number {
@@ -529,7 +537,7 @@
       font-size: 2.8rem;
       font-weight: 700;
       color: transparent;
-      -webkit-text-stroke: 1.5px var(--mid-gray);
+      -webkit-text-stroke: 1.5px var(--soft-gray);
       line-height: 1;
       transition: var(--transition);
     }
@@ -537,7 +545,7 @@
     .skill-icon {
       width: 56px;
       height: 56px;
-      border: 2px solid var(--white);
+      border: 2px solid var(--soft-gray);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -556,7 +564,7 @@
 
     .skill-item p {
       font-size: 1rem;
-      color: var(--near-white);
+      color: var(--text-gray);
       font-weight: 400;
       line-height: 1.7;
       transition: var(--transition);
@@ -575,7 +583,7 @@
     .experience-item:first-child { border-top: 1px solid var(--dark-gray); }
 
     .experience-item:hover {
-      background: rgba(255, 255, 255, 0.03);
+      background: rgba(255, 255, 255, 0.02);
       padding-left: 24px;
       padding-right: 24px;
       margin: 0 -24px;
@@ -594,7 +602,7 @@
 
     .exp-company {
       font-size: 0.95rem;
-      color: var(--mid-gray);
+      color: var(--text-gray);
       font-weight: 400;
       line-height: 1.5;
       display: flex;
@@ -602,7 +610,7 @@
       gap: 8px;
     }
 
-    .exp-company i { font-size: 0.8rem; color: var(--mid-gray); }
+    .exp-company i { font-size: 0.8rem; color: var(--soft-gray); }
 
     .exp-body h3 {
       font-size: 1.5rem;
@@ -613,7 +621,7 @@
 
     .exp-body p {
       font-size: 1.05rem;
-      color: var(--near-white);
+      color: var(--text-gray);
       font-weight: 400;
       line-height: 1.8;
     }
@@ -623,21 +631,22 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2px;
-      background: var(--black);
-      border: 2px solid var(--white);
+      background: var(--dark-gray);
+      border: 2px solid var(--dark-gray);
     }
 
     .achievement-card {
-      background: var(--black);
+      background: var(--charcoal);
       padding: 48px 32px;
       transition: var(--transition);
       position: relative;
+      border: 1px solid var(--mid-gray);
     }
 
     .achievement-card:hover { background: var(--white); }
     .achievement-card:hover h4,
     .achievement-card:hover p,
-    .achievement-card:hover .achievement-icon { color: var(--black); }
+    .achievement-card:hover .achievement-icon { color: var(--near-black); }
 
     .achievement-icon {
       font-size: 1.8rem;
@@ -655,7 +664,7 @@
 
     .achievement-card p {
       font-size: 1rem;
-      color: var(--near-white);
+      color: var(--text-gray);
       font-weight: 400;
       line-height: 1.7;
       transition: var(--transition);
@@ -666,22 +675,25 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2px;
-      background: var(--black);
-      border: 2px solid var(--white);
+      background: var(--dark-gray);
+      border: 2px solid var(--dark-gray);
     }
 
     .edu-card {
-      background: var(--black);
+      background: var(--charcoal);
       padding: 48px 32px;
       transition: var(--transition);
-      border-top: 4px solid var(--white);
+      border-top: 4px solid var(--soft-gray);
+      border-left: 1px solid var(--mid-gray);
+      border-right: 1px solid var(--mid-gray);
+      border-bottom: 1px solid var(--mid-gray);
     }
 
     .edu-card:hover { background: var(--white); }
     .edu-card:hover h4,
     .edu-card:hover .edu-school,
     .edu-card:hover .edu-year,
-    .edu-card:hover .edu-icon { color: var(--black); }
+    .edu-card:hover .edu-icon { color: var(--near-black); }
 
     .edu-icon {
       font-size: 1.7rem;
@@ -699,7 +711,7 @@
 
     .edu-card .edu-school {
       font-size: 0.95rem;
-      color: var(--near-white);
+      color: var(--text-gray);
       margin-bottom: 8px;
       font-weight: 400;
       transition: var(--transition);
@@ -731,10 +743,10 @@
       width: 100%;
       height: 100%;
       background-image:
-        linear-gradient(45deg, rgba(255,255,255,0.045) 25%, transparent 25%),
-        linear-gradient(-45deg, rgba(255,255,255,0.045) 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.045) 75%),
-        linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.045) 75%);
+        linear-gradient(45deg, rgba(255,255,255,0.03) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(255,255,255,0.03) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.03) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.03) 75%);
       background-size: 60px 60px;
       background-position: 0 0, 0 30px, 30px -30px, -30px 0;
       pointer-events: none;
@@ -760,7 +772,7 @@
     }
 
     .contact-section .section-desc {
-      color: var(--near-white);
+      color: var(--text-gray);
       margin-bottom: 56px;
       font-size: 1.1rem;
     }
@@ -789,16 +801,16 @@
     .contact-detail span,
     .contact-detail a {
       font-size: 1rem;
-      color: var(--near-white);
+      color: var(--text-gray);
       font-weight: 400;
       transition: color var(--transition);
     }
 
-    .contact-detail a:hover { color: var(--mid-gray); }
+    .contact-detail a:hover { color: var(--white); }
 
     /* ============ FOOTER ============ */
     footer {
-      background: var(--black);
+      background: var(--pure-black);
       padding: 56px 0 36px;
       position: relative;
       border-top: 1px solid var(--dark-gray);
@@ -812,14 +824,14 @@
       width: 100%;
       height: 8px;
       background-image:
-        linear-gradient(45deg, var(--white) 25%, transparent 25%),
-        linear-gradient(-45deg, var(--white) 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, var(--white) 75%),
-        linear-gradient(-45deg, transparent 75%, var(--white) 75%);
+        linear-gradient(45deg, var(--soft-gray) 25%, transparent 25%),
+        linear-gradient(-45deg, var(--soft-gray) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, var(--soft-gray) 75%),
+        linear-gradient(-45deg, transparent 75%, var(--soft-gray) 75%);
       background-size: 16px 16px;
       background-position: 0 0, 0 8px, 8px -8px, -8px 0;
-      background-color: var(--black);
-      opacity: 0.85;
+      background-color: var(--pure-black);
+      opacity: 0.9;
     }
 
     .footer-inner {
@@ -858,11 +870,11 @@
       font-weight: 500;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--near-white);
+      color: var(--text-gray);
       transition: color var(--transition);
     }
 
-    .footer-links a:hover { color: var(--mid-gray); }
+    .footer-links a:hover { color: var(--white); }
 
     .footer-social {
       display: flex;
@@ -872,7 +884,7 @@
     .footer-social a {
       width: 44px;
       height: 44px;
-      border: 2px solid var(--white);
+      border: 2px solid var(--soft-gray);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -883,7 +895,8 @@
 
     .footer-social a:hover {
       background: var(--white);
-      color: var(--black);
+      border-color: var(--white);
+      color: var(--pure-black);
     }
 
     .footer-bottom {
@@ -929,7 +942,7 @@
         top: 100%;
         left: 0;
         width: 100%;
-        background: var(--black);
+        background: var(--near-black);
         border-top: 1px solid var(--dark-gray);
         display: none;
         padding: 24px 0;
@@ -1090,7 +1103,7 @@
         <p class="section-desc">A chronological record of my roles in administrative support, documentation, and office coordination.</p>
       </div>
       <div class="experience-list reveal">
-        <div class="experience-item"><div class="exp-meta"><span class="exp-date">2026 – Present</span><span class="exp-company"><i class="fas fa-map-marker-alt"></i> Quezon City</span></div><div class="exp-body"><h3>Supply Clerk</h3><p>Manage all incoming and outgoing goods while ensuring complete and accurate documentation for every transaction at Philippine Veterans Affairs Office. Issue supplies to multiple divisions, receive and verify deliveries against orders, and reconcile inventory variances to keep stock records precise. Maintain audit-ready logs and coordinate closely with other divisions to ensure uninterrupted supply flow and operational accuracy.</p></div></div>
+        <div class="experience-item"><div class="exp-meta"><span class="exp-date">2026 – Present</span><span class="exp-company"><i class="fas fa-map-marker-alt"></i> Quezon City</span></div><div class="exp-body"><h3>Supply Clerk</h3><p>Manage all incoming and outgoing supplies while ensuring complete and accurate documentation for every transaction at Philippine Veterans Affairs Office. Issue supplies to multiple divisions, receive and verify deliveries against orders, and reconcile inventory variances to keep stock records precise. Maintain audit-ready logs and coordinate closely with other divisions to ensure uninterrupted supply flow and operational accuracy.</p></div></div>
         <div class="experience-item"><div class="exp-meta"><span class="exp-date">2024 – 2025</span><span class="exp-company"><i class="fas fa-map-marker-alt"></i> Quezon City</span></div><div class="exp-body"><h3>Client Service Consultant</h3><p>Managed and documented over 30 client inquiries daily via phone and email, ensuring accurate data recording and timely issue resolution. Maintained audit-ready communication logs and coordinated with technical and billing teams for follow-ups. Prepared reports and promoted additional services based on client needs.</p></div></div>
         <div class="experience-item"><div class="exp-meta"><span class="exp-date">Freelance</span><span class="exp-company"><i class="fas fa-globe"></i> Remote</span></div><div class="exp-body"><h3>Media Timecode Coordinator</h3><p>Performed detailed documentation work by accurately coding time stamps for raw video footage. Prepared on-screen titles, captions, and headlines while maintaining strict adherence to project requirements and documentation standards for Charlton Media Group.</p></div></div>
         <div class="experience-item"><div class="exp-meta"><span class="exp-date">2023</span><span class="exp-company"><i class="fas fa-map-marker-alt"></i> Cainta, Rizal</span></div><div class="exp-body"><h3>Office & Inventory Clerk</h3><p>Encoded all delivered raw materials and updated stock cards to maintain precise inventory records at Bonpack Corporation. Verified material details against job orders before release, prepared monthly inventory summaries, conducted reconciliation, and maintained organized filing for material issuances and transfer lists.</p></div></div>
