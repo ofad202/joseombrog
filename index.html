@@ -17,7 +17,6 @@
     }
 
     :root {
-      /* Layered blacks & grays */
       --pure-black: #000000;
       --near-black: #0A0A0A;
       --charcoal: #141414;
@@ -344,7 +343,6 @@
       filter: grayscale(30%) contrast(1.05) saturate(1.1);
     }
 
-    /* QR CODE CORNER */
     .qr-corner {
       position: absolute;
       bottom: -30px;
@@ -646,7 +644,8 @@
     .achievement-card:hover { background: var(--white); }
     .achievement-card:hover h4,
     .achievement-card:hover p,
-    .achievement-card:hover .achievement-icon { color: var(--near-black); }
+    .achievement-card:hover .achievement-icon,
+    .achievement-card:hover .achievement-number { color: var(--near-black); }
 
     .achievement-icon {
       font-size: 1.8rem;
@@ -655,8 +654,20 @@
       transition: var(--transition);
     }
 
+    .achievement-number {
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--white);
+      display: block;
+      line-height: 1;
+      margin-bottom: 12px;
+      letter-spacing: 0.02em;
+      transition: var(--transition);
+    }
+
     .achievement-card h4 {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       margin-bottom: 14px;
       color: var(--white);
       transition: var(--transition);
@@ -989,6 +1000,7 @@
       .section-title { font-size: 1.8rem; }
       .stat-number { font-size: 2.4rem; }
       .skill-number { font-size: 2.2rem; }
+      .achievement-number { font-size: 2rem; }
       .qr-corner {
         width: 90px;
         height: 90px;
@@ -1122,9 +1134,24 @@
         <p class="section-desc">Measurable results that reflect my commitment to administrative excellence and operational accuracy.</p>
       </div>
       <div class="achievements-grid reveal">
-        <div class="achievement-card"><div class="achievement-icon"><i class="fas fa-boxes-stacked"></i></div><h4>Supply & Inventory Control</h4><p>Manage the full flow of incoming and outgoing goods across multiple divisions — issuing supplies, receiving deliveries, and reconciling inventory variances with consistent accuracy.</p></div>
-        <div class="achievement-card"><div class="achievement-icon"><i class="fas fa-keyboard"></i></div><h4>High-Volume Data Entry</h4><p>Encoded daily transactions, deliveries, and inventory data into SAP and Microsoft Office systems with consistent speed and accuracy — supporting smooth warehouse and office workflows.</p></div>
-        <div class="achievement-card"><div class="achievement-icon"><i class="fas fa-check-double"></i></div><h4>Documentation Accuracy</h4><p>Delivered 100% accurate timecoding and record keeping, reducing processing time by up to 20% and improving turnaround by 15%.</p></div>
+        <div class="achievement-card">
+          <div class="achievement-icon"><i class="fas fa-boxes-stacked"></i></div>
+          <span class="achievement-number">99%+</span>
+          <h4>Inventory Accuracy</h4>
+          <p>Maintained near-perfect stock reconciliation across multiple divisions — issuing supplies, verifying deliveries, and resolving variances with consistent precision.</p>
+        </div>
+        <div class="achievement-card">
+          <div class="achievement-icon"><i class="fas fa-star"></i></div>
+          <span class="achievement-number">95%+</span>
+          <h4>Client Satisfaction Rating</h4>
+          <p>Sustained top-tier CSAT performance while handling 30+ inquiries daily — resolving concerns efficiently and documenting all interactions in audit-ready formats.</p>
+        </div>
+        <div class="achievement-card">
+          <div class="achievement-icon"><i class="fas fa-check-double"></i></div>
+          <span class="achievement-number">20%</span>
+          <h4>Faster Documentation Turnaround</h4>
+          <p>Delivered 100% accurate timecoding and record keeping, cutting processing time by 20% and improving project turnaround by 15%.</p>
+        </div>
       </div>
     </div>
   </section>
