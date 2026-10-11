@@ -64,7 +64,7 @@
       margin: 0 auto;
     }
 
-    /* HEADER */
+    /* ============ HEADER ============ */
     header {
       position: fixed;
       top: 0;
@@ -149,7 +149,7 @@
       color: var(--black);
     }
 
-    /* HERO */
+    /* ============ HERO ============ */
     .hero {
       background: var(--black);
       padding: 160px 0 100px;
@@ -207,29 +207,31 @@
     .hero-eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 14px;
+      gap: 16px;
       font-family: var(--font-display);
-      font-size: 0.85rem;
+      font-size: 1.6rem;
       font-weight: 500;
-      letter-spacing: 0.24em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--white);
-      margin-bottom: 28px;
+      margin-bottom: 32px;
+      line-height: 1.3;
     }
 
     .hero-eyebrow::before {
       content: '';
       display: block;
-      width: 48px;
-      height: 2px;
+      width: 60px;
+      height: 3px;
       background: var(--white);
+      flex-shrink: 0;
     }
 
     .hero h1 {
       font-size: 4.2rem;
       font-weight: 700;
       color: var(--white);
-      margin-bottom: 24px;
+      margin-bottom: 28px;
       line-height: 1.05;
       letter-spacing: 0.01em;
     }
@@ -238,34 +240,6 @@
       color: transparent;
       -webkit-text-stroke: 2px var(--white);
       display: inline-block;
-    }
-
-    .hero-number {
-      font-family: var(--font-display);
-      font-size: 1rem;
-      font-weight: 400;
-      letter-spacing: 0.3em;
-      color: var(--mid-gray);
-      margin-bottom: 16px;
-      display: block;
-    }
-
-    .hero-divider {
-      width: 80px;
-      height: 3px;
-      background: var(--white);
-      margin-bottom: 28px;
-      position: relative;
-    }
-
-    .hero-divider::after {
-      content: '';
-      position: absolute;
-      right: -100px;
-      top: 0;
-      width: 80px;
-      height: 3px;
-      background: var(--mid-gray);
     }
 
     .hero-description {
@@ -411,7 +385,7 @@
       z-index: 6;
     }
 
-    /* SECTIONS */
+    /* ============ SECTIONS ============ */
     .section {
       padding: 110px 0;
       position: relative;
@@ -430,29 +404,14 @@
       margin-bottom: 64px;
     }
 
-    .section-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 14px;
-      font-family: var(--font-display);
-      font-size: 0.8rem;
-      font-weight: 500;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: var(--white);
-      margin-bottom: 20px;
-    }
-
-    .section-label::before {
-      content: '';
-      display: block;
-      width: 36px;
-      height: 2px;
+    .section-rule {
+      width: 64px;
+      height: 3px;
       background: var(--white);
+      margin-bottom: 28px;
     }
 
-    .section-white .section-label { color: var(--black); }
-    .section-white .section-label::before { background: var(--black); }
+    .section-white .section-rule { background: var(--black); }
 
     .section-title {
       font-size: 2.8rem;
@@ -473,7 +432,7 @@
 
     .section-white .section-desc { color: var(--dark-gray); }
 
-    /* ABOUT */
+    /* ============ ABOUT ============ */
     .about-grid {
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
@@ -537,7 +496,7 @@
       transition: var(--transition);
     }
 
-    /* SKILLS */
+    /* ============ SKILLS ============ */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -603,7 +562,7 @@
       transition: var(--transition);
     }
 
-    /* EXPERIENCE */
+    /* ============ EXPERIENCE ============ */
     .experience-item {
       display: grid;
       grid-template-columns: 240px 1fr;
@@ -659,7 +618,7 @@
       line-height: 1.8;
     }
 
-    /* ACHIEVEMENTS */
+    /* ============ ACHIEVEMENTS ============ */
     .achievements-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -702,7 +661,7 @@
       transition: var(--transition);
     }
 
-    /* EDUCATION */
+    /* ============ EDUCATION ============ */
     .education-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -756,7 +715,7 @@
       transition: var(--transition);
     }
 
-    /* CONTACT */
+    /* ============ CONTACT ============ */
     .contact-section {
       background: var(--charcoal);
       padding: 120px 0;
@@ -789,8 +748,10 @@
       margin: 0 auto;
     }
 
-    .contact-section .section-label { justify-content: center; }
-    .contact-section .section-label::before { display: none; }
+    .contact-inner .section-rule {
+      margin-left: auto;
+      margin-right: auto;
+    }
 
     .contact-section .section-title {
       color: var(--white);
@@ -835,7 +796,7 @@
 
     .contact-detail a:hover { color: var(--mid-gray); }
 
-    /* FOOTER */
+    /* ============ FOOTER ============ */
     footer {
       background: var(--black);
       padding: 56px 0 36px;
@@ -884,7 +845,7 @@
       letter-spacing: 0.04em;
       text-transform: none;
     }
- 
+
     .footer-links {
       display: flex;
       gap: 32px;
@@ -937,7 +898,7 @@
       text-transform: uppercase;
     }
 
-    /* REVEAL */
+    /* ============ REVEAL ============ */
     .reveal {
       opacity: 0;
       transform: translateY(28px);
@@ -949,12 +910,11 @@
       transform: translateY(0);
     }
 
-    /* RESPONSIVE */
+    /* ============ RESPONSIVE ============ */
     @media (max-width: 1024px) {
       .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 60px; }
-      .hero-eyebrow, .hero-divider, .hero-description, .hero-actions { margin-left: auto; margin-right: auto; }
+      .hero-eyebrow, .hero-description, .hero-actions { margin-left: auto; margin-right: auto; }
       .hero-eyebrow, .hero-actions { justify-content: center; }
-      .hero-divider::after { display: none; }
       .hero-portrait { order: -1; }
       .about-grid { grid-template-columns: 1fr; gap: 48px; }
       .skills-grid { grid-template-columns: repeat(3, 1fr); }
@@ -981,8 +941,10 @@
       nav a::after { display: none; }
       .hero { padding: 130px 0 80px; min-height: auto; }
       .hero h1 { font-size: 2.8rem; }
+      .hero-eyebrow { font-size: 1.2rem; letter-spacing: 0.12em; }
       .section { padding: 80px 0; }
       .section-title { font-size: 2.2rem; }
+      .section-rule { width: 52px; height: 3px; margin-bottom: 22px; }
       .skills-grid, .achievements-grid, .education-grid { grid-template-columns: 1fr; }
       .experience-item { grid-template-columns: 1fr; gap: 20px; }
       .exp-meta { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
@@ -1005,6 +967,8 @@
 
     @media (max-width: 480px) {
       .hero h1 { font-size: 2.2rem; }
+      .hero-eyebrow { font-size: 1rem; letter-spacing: 0.1em; }
+      .hero-eyebrow::before { width: 40px; height: 2px; }
       .hero-actions { flex-direction: column; width: 100%; }
       .hero-actions .btn { width: 100%; justify-content: center; }
       .portrait-frame { width: 260px; height: 320px; }
@@ -1053,9 +1017,7 @@
     <div class="container hero-inner">
       <div class="hero-text">
         <div class="hero-eyebrow">Administrative Operations Professional</div>
-        <span class="hero-number">// 001 — PROFESSIONAL PROFILE</span>
         <h1>Jose D.<br>Ombrog <span class="outline">Jr.</span></h1>
-        <div class="hero-divider"></div>
         <p class="hero-description">
           A detail-oriented administrative professional with over nine years of experience in records management, office documentation, inventory coordination, and client support — dedicated to accuracy, organization, and operational efficiency.
         </p>
@@ -1082,7 +1044,7 @@
   <section class="section section-black" id="about">
     <div class="container">
       <div class="section-header reveal">
-        <div class="section-label">01 — About</div>
+        <div class="section-rule"></div>
         <h2 class="section-title">Professional Profile</h2>
         <p class="section-desc">A concise overview of my background, capabilities, and the value I bring to administrative roles.</p>
       </div>
@@ -1105,7 +1067,7 @@
   <section class="section section-charcoal" id="skills">
     <div class="container"> 
       <div class="section-header reveal">
-        <div class="section-label">02 — Capabilities</div>
+        <div class="section-rule"></div>
         <h2 class="section-title">Administrative Skills</h2>
         <p class="section-desc">Core competencies developed through years of hands-on office, documentation, and coordination experience.</p>
       </div>
@@ -1123,7 +1085,7 @@
   <section class="section section-black" id="experience">
     <div class="container">
       <div class="section-header reveal">
-        <div class="section-label">03 — Career</div>
+        <div class="section-rule"></div>
         <h2 class="section-title">Professional Experience</h2>
         <p class="section-desc">A chronological record of my roles in administrative support, documentation, and office coordination.</p>
       </div>
@@ -1142,7 +1104,7 @@
   <section class="section section-charcoal" id="achievements">
     <div class="container">
       <div class="section-header reveal">
-        <div class="section-label">04 — Recognition</div>
+        <div class="section-rule"></div>
         <h2 class="section-title">Key Achievements</h2>
         <p class="section-desc">Measurable results that reflect my commitment to administrative excellence and operational accuracy.</p>
       </div>
@@ -1157,7 +1119,7 @@
   <section class="section section-black" id="education">
     <div class="container">
       <div class="section-header reveal">
-        <div class="section-label">05 — Credentials</div>
+        <div class="section-rule"></div>
         <h2 class="section-title">Education & Certification</h2>
         <p class="section-desc">Academic foundation and professional credentials supporting my administrative career.</p>
       </div>
@@ -1171,7 +1133,7 @@
 
   <section class="contact-section" id="contact">
     <div class="container contact-inner">
-      <div class="section-label reveal">06 — Contact</div>
+      <div class="section-rule reveal"></div>
       <h2 class="section-title reveal">Let's Work Together</h2>
       <p class="section-desc reveal">I am open to administrative opportunities, office support roles, and professional collaborations. Feel free to reach out.</p>
       <div class="contact-details reveal">
