@@ -97,6 +97,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 18px 0;
+      gap: 40px;
     }
 
     .logo {
@@ -104,22 +105,29 @@
       align-items: center;
       gap: 12px;
       font-family: 'Noto Serif', var(--font-display), serif;
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       font-weight: 700;
       letter-spacing: 0.04em;
       text-transform: none;
       color: var(--white);
+      flex-shrink: 0;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 32px;
     }
 
     nav ul {
       display: flex;
-      gap: 36px;
+      gap: 32px;
       align-items: center;
     }
 
     nav a {
       font-family: var(--font-display);
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       font-weight: 500;
       letter-spacing: 0.16em;
       text-transform: uppercase;
@@ -141,6 +149,32 @@
     }
 
     nav a:hover::after { width: 100%; }
+
+    /* Small resume link in the header — right-aligned anchor */
+    .header-resume {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      transition: var(--transition);
+      flex-shrink: 0;
+    }
+
+    .header-resume i { font-size: 0.7rem; transition: transform var(--transition); }
+
+    .header-resume:hover {
+      background: var(--accent);
+      color: var(--near-black);
+    }
+
+    .header-resume:hover i { transform: translateY(2px); }
 
     .menu-toggle {
       display: none;
@@ -165,25 +199,26 @@
       padding: 160px 0 100px;
       position: relative;
       overflow: hidden;
-      min-height: 100vh;
+      min-height: 85vh;
       display: flex;
       align-items: center;
     }
 
+    /* Faint pattern only behind the portrait column */
     .hero::before {
       content: '';
       position: absolute;
       top: 0;
       right: 0;
-      width: 45%;
+      width: 42%;
       height: 100%;
       background-image:
-        linear-gradient(45deg, rgba(201,168,106,0.05) 25%, transparent 25%),
-        linear-gradient(-45deg, rgba(201,168,106,0.05) 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, rgba(201,168,106,0.05) 75%),
-        linear-gradient(-45deg, transparent 75%, rgba(201,168,106,0.05) 75%);
-      background-size: 40px 40px;
-      background-position: 0 0, 0 20px, 20px -20px, -20px 0;
+        linear-gradient(45deg, rgba(201,168,106,0.035) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(201,168,106,0.035) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(201,168,106,0.035) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(201,168,106,0.035) 75%);
+      background-size: 48px 48px;
+      background-position: 0 0, 0 24px, 24px -24px, -24px 0;
       pointer-events: none;
     }
 
@@ -207,7 +242,7 @@
 
     .hero-inner {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 80px;
       align-items: center;
       position: relative;
@@ -219,26 +254,26 @@
       align-items: center;
       gap: 16px;
       font-family: var(--font-display);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-weight: 600;
       letter-spacing: 0.24em;
       text-transform: uppercase;
       color: var(--accent);
-      margin-bottom: 32px;
+      margin-bottom: 28px;
       line-height: 1.3;
     }
 
     .hero-eyebrow::before {
       content: '';
       display: block;
-      width: 60px;
+      width: 52px;
       height: 2px;
       background: var(--accent);
       flex-shrink: 0;
     }
 
     .hero h1 {
-      font-size: 4.2rem;
+      font-size: 4rem;
       font-weight: 700;
       color: var(--white);
       margin-bottom: 28px;
@@ -246,21 +281,22 @@
       letter-spacing: 0.01em;
     }
 
+    /* Brass outline now on the surname — the identity anchor */
     .hero h1 .outline {
       color: transparent;
       -webkit-text-stroke: 2px var(--accent);
       display: inline-block;
     }
 
-    /* Punchy positioning statement */
+    /* Short punchy positioning line */
     .hero-tagline {
       font-family: var(--font-body);
-      font-size: 1.35rem;
+      font-size: 1.3rem;
       font-weight: 400;
       color: var(--white);
-      line-height: 1.55;
+      line-height: 1.5;
       margin-bottom: 20px;
-      max-width: 640px;
+      max-width: 620px;
       letter-spacing: -0.005em;
     }
 
@@ -271,17 +307,17 @@
     }
 
     .hero-description {
-      font-size: 1.05rem;
+      font-size: 1.02rem;
       color: var(--text-gray);
       margin-bottom: 40px;
-      max-width: 620px;
+      max-width: 600px;
       font-weight: 400;
       line-height: 1.85;
     }
 
     .hero-actions {
       display: flex;
-      gap: 18px;
+      gap: 16px;
       flex-wrap: wrap;
       align-items: center;
     }
@@ -327,37 +363,7 @@
       transform: translateY(-3px);
     }
 
-    /* Clean resume link — replaces QR-code primary use */
-    .btn-resume {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 16px 0;
-      font-family: var(--font-display);
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--text-gray);
-      transition: var(--transition);
-      border-bottom: 2px solid transparent;
-    }
-
-    .btn-resume i {
-      font-size: 0.9rem;
-      color: var(--accent);
-      transition: var(--transition);
-    }
-
-    .btn-resume:hover {
-      color: var(--accent-bright);
-      border-bottom-color: var(--accent-bright);
-    }
-
-    .btn-resume:hover i {
-      transform: translateY(2px);
-    }
-
+    /* ============ HERO PORTRAIT (fixed) ============ */
     .hero-portrait {
       display: flex;
       justify-content: center;
@@ -370,69 +376,29 @@
       height: 420px;
       position: relative;
       background: var(--dark-gray);
+      /* visible brass frame */
+      padding: 10px;
       border: 1px solid var(--accent);
-    }
-
-    /* Single brass hairline accent under the portrait */
-    .portrait-frame::after {
-      content: '';
-      position: absolute;
-      bottom: -20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 2px;
-      background: var(--accent);
     }
 
     .portrait-img {
       width: 100%;
       height: 100%;
-      background: var(--dark-gray);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background: var(--charcoal);
       overflow: hidden;
+      display: block;
     }
 
     .portrait-img img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: grayscale(20%) contrast(1.08) saturate(1.05);
-    }
-
-    /* QR now small, inset in bottom-right of portrait */
-    .qr-corner {
-      position: absolute;
-      bottom: 16px;
-      right: 16px;
-      width: 76px;
-      height: 76px;
-      background: var(--near-black);
-      padding: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid var(--accent);
-      transition: var(--transition);
-      z-index: 5;
-    }
-
-    .qr-corner img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
+      object-position: center top;
       display: block;
-      filter: invert(0);
+      filter: grayscale(15%) contrast(1.05);
     }
 
-    .qr-corner:hover {
-      transform: scale(1.08);
-      border-color: var(--accent-bright);
-    }
-
-    /* ============ SELECTED HIGHLIGHTS (NEW) ============ */
+    /* ============ SELECTED HIGHLIGHTS ============ */
     .highlights {
       background: var(--charcoal);
       padding: 100px 0;
@@ -480,9 +446,7 @@
       transition: var(--transition);
     }
 
-    .highlight:not(:first-child) {
-      padding-left: 32px;
-    }
+    .highlight:not(:first-child) { padding-left: 32px; }
 
     .highlight:last-child {
       border-right: none;
@@ -736,9 +700,7 @@
       transition: color var(--transition);
     }
 
-    .experience-item.current .exp-date {
-      color: var(--accent);
-    }
+    .experience-item.current .exp-date { color: var(--accent); }
 
     .exp-company {
       font-size: 0.95rem;
@@ -988,9 +950,7 @@
       word-break: break-word;
     }
 
-    .contact-item a.contact-value:hover {
-      color: var(--accent-bright);
-    }
+    .contact-item a.contact-value:hover { color: var(--accent-bright); }
 
     /* ============ FOOTER ============ */
     footer {
@@ -1125,8 +1085,9 @@
     /* ============ RESPONSIVE ============ */
     @media (max-width: 1200px) {
       .hero-inner { gap: 50px; }
-      .hero h1 { font-size: 3.6rem; }
+      .hero h1 { font-size: 3.4rem; }
       .contact-section .section-title { font-size: 2.6rem; }
+      .header-resume { display: none; }
     }
 
     @media (max-width: 1024px) {
@@ -1177,8 +1138,11 @@
         border-top: 1px solid var(--dark-gray);
         display: none;
         padding: 24px 0;
+        flex-direction: column;
+        gap: 0;
+        align-items: stretch;
       }
-      nav.active { display: block; }
+      nav.active { display: flex; }
       nav ul { flex-direction: column; gap: 0; padding: 0 6%; }
       nav ul li { width: 100%; }
       nav a { display: block; padding: 16px 0; border-bottom: 1px solid var(--dark-gray); }
@@ -1187,7 +1151,7 @@
       .hero { padding: 130px 0 80px; min-height: auto; }
       .hero h1 { font-size: 2.8rem; }
       .hero-tagline { font-size: 1.15rem; }
-      .hero-eyebrow { font-size: 0.8rem; letter-spacing: 0.18em; }
+      .hero-eyebrow { font-size: 0.75rem; letter-spacing: 0.18em; }
 
       .section { padding: 80px 0; }
       .section-header { margin-bottom: 48px; }
@@ -1229,19 +1193,11 @@
       body { font-size: 15px; }
       .hero h1 { font-size: 2.2rem; }
       .hero-tagline { font-size: 1.05rem; }
-      .hero-eyebrow { font-size: 0.72rem; letter-spacing: 0.14em; }
+      .hero-eyebrow { font-size: 0.68rem; letter-spacing: 0.14em; }
       .hero-eyebrow::before { width: 36px; height: 2px; }
       .hero-actions { flex-direction: column; width: 100%; align-items: stretch; }
       .hero-actions .btn { width: 100%; justify-content: center; }
-      .hero-actions .btn-resume { justify-content: center; }
-      .portrait-frame { width: 240px; height: 300px; }
-      .qr-corner {
-        width: 60px;
-        height: 60px;
-        bottom: 12px;
-        right: 12px;
-        padding: 4px;
-      }
+      .portrait-frame { width: 260px; height: 320px; padding: 8px; }
       .about-stats { grid-template-columns: 1fr; }
       .section-title { font-size: 1.7rem; }
       .stat-number { font-size: 2.2rem; }
@@ -1271,6 +1227,9 @@
           <li><a href="#education">Education</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
+        <a href="resume.pdf" download class="header-resume">
+          <i class="fas fa-download"></i> Resume
+        </a>
       </nav>
     </div>
   </header>
@@ -1279,17 +1238,16 @@
     <div class="container hero-inner">
       <div class="hero-text">
         <div class="hero-eyebrow">Administrative Operations Professional</div>
-        <h1>Jose D.<br>Ombrog <span class="outline">Jr.</span></h1>
+        <h1>Jose D.<br><span class="outline">Ombrog</span> Jr.</h1>
         <p class="hero-tagline">
-          I keep operations <strong>audit-ready</strong>. Nine years turning messy documentation into clean, compliant, on-time records across government, logistics, and BPO.
+          I keep operations <strong>audit-ready</strong>. Nine years turning messy documentation into clean, compliant, on-time records.
         </p>
         <p class="hero-description">
-          Supply clerk, records keeper, and client-service specialist — with deep hands-on experience in SAP, inventory reconciliation, and audit-facing documentation.
+          Supply clerk, records keeper, and client-service specialist — with hands-on experience in SAP, inventory reconciliation, and audit-facing documentation across government, logistics, and BPO.
         </p>
         <div class="hero-actions">
           <a href="#contact" class="btn btn-white"><i class="fas fa-paper-plane"></i> Get in Touch</a>
           <a href="#highlights" class="btn btn-ghost"><i class="fas fa-star"></i> See Highlights</a>
-          <a href="resume.pdf" download class="btn-resume"><i class="fas fa-download"></i> Download Resume</a>
         </div>
       </div>
       <div class="hero-portrait">
@@ -1297,15 +1255,11 @@
           <div class="portrait-img">
             <img src="jose.jpg" alt="Jose Ombrog Jr.">
           </div>
-          <a href="resume.pdf" target="_blank" class="qr-corner" aria-label="Scan to download resume">
-            <img src="resume-qr.png" alt="QR code for resume download">
-          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ NEW: SELECTED HIGHLIGHTS ============ -->
   <section class="highlights" id="highlights">
     <div class="container">
       <div class="highlights-header reveal">
