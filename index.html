@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
   <title>Jose D. Ombrog Jr. | Administrative Operations Professional</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,6 +32,7 @@
       --font-body: 'Inter', sans-serif;
 
       --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --max-width-wide: 1440px;
     }
 
     html {
@@ -46,6 +47,7 @@
       line-height: 1.75;
       color: var(--white);
       background-color: var(--near-black);
+      overflow-x: hidden;
     }
 
     h1, h2, h3, h4, h5 {
@@ -62,9 +64,10 @@
     ul { list-style: none; }
 
     .container {
-      width: 92%;
-      max-width: 1180px;
+      width: 96%;
+      max-width: var(--max-width-wide);
       margin: 0 auto;
+      padding: 0 8px;
     }
 
     /* ============ HEADER ============ */
@@ -200,7 +203,7 @@
 
     .hero-inner {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: 1.2fr 0.8fr;
       gap: 80px;
       align-items: center;
       position: relative;
@@ -249,7 +252,7 @@
       font-size: 1.1rem;
       color: var(--text-gray);
       margin-bottom: 40px;
-      max-width: 560px;
+      max-width: 620px;
       font-weight: 400;
       line-height: 1.8;
     }
@@ -345,12 +348,12 @@
 
     .qr-corner {
       position: absolute;
-      bottom: -30px;
-      right: -30px;
-      width: 140px;
-      height: 140px;
+      bottom: -28px;
+      right: -28px;
+      width: 130px;
+      height: 130px;
       background: var(--white);
-      padding: 10px;
+      padding: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -372,40 +375,18 @@
       box-shadow: 0 12px 32px rgba(255, 255, 255, 0.2);
     }
 
-    .qr-label {
-      position: absolute;
-      bottom: 118px;
-      right: -22px;
-      font-family: var(--font-display);
-      font-size: 0.6rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--white);
-      background: var(--pure-black);
-      border: 1px solid var(--soft-gray);
-      padding: 4px 10px;
-      white-space: nowrap;
-      z-index: 6;
-    }
-
     /* ============ SECTIONS ============ */
     .section {
-      padding: 110px 0;
+      padding: 120px 0;
       position: relative;
     }
 
     .section-black { background: var(--near-black); }
     .section-charcoal { background: var(--charcoal); }
-    .section-white { background: var(--white); color: var(--near-black); }
-    .section-white h1,
-    .section-white h2,
-    .section-white h3,
-    .section-white h4 { color: var(--near-black); }
 
     .section-header {
-      max-width: 780px;
-      margin-bottom: 64px;
+      max-width: 900px;
+      margin-bottom: 72px;
     }
 
     .section-rule {
@@ -415,8 +396,6 @@
       margin-bottom: 28px;
     }
 
-    .section-white .section-rule { background: var(--near-black); }
-
     .section-title {
       font-size: 2.8rem;
       font-weight: 700;
@@ -425,8 +404,6 @@
       color: var(--white);
     }
 
-    .section-white .section-title { color: var(--near-black); }
-
     .section-desc {
       font-size: 1.1rem;
       color: var(--text-gray);
@@ -434,12 +411,10 @@
       line-height: 1.8;
     }
 
-    .section-white .section-desc { color: var(--mid-gray); }
-
     /* ============ ABOUT ============ */
     .about-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1.3fr 0.7fr;
       gap: 80px;
       align-items: start;
     }
@@ -571,7 +546,7 @@
     /* ============ EXPERIENCE ============ */
     .experience-item {
       display: grid;
-      grid-template-columns: 240px 1fr;
+      grid-template-columns: 260px 1fr;
       gap: 48px;
       padding: 52px 0;
       border-bottom: 1px solid var(--dark-gray);
@@ -738,10 +713,10 @@
       transition: var(--transition);
     }
 
-    /* ============ CONTACT ============ */
+    /* ============ CONTACT (elegant) ============ */
     .contact-section {
       background: var(--charcoal);
-      padding: 120px 0;
+      padding: 140px 0;
       position: relative;
       overflow: hidden;
     }
@@ -766,9 +741,9 @@
     .contact-inner {
       position: relative;
       z-index: 2;
-      text-align: center;
-      max-width: 780px;
+      max-width: 1000px;
       margin: 0 auto;
+      text-align: center;
     }
 
     .contact-inner .section-rule {
@@ -778,51 +753,71 @@
 
     .contact-section .section-title {
       color: var(--white);
-      font-size: 2.8rem;
-      margin-bottom: 24px;
+      font-size: 3rem;
+      margin-bottom: 22px;
+      letter-spacing: 0.02em;
     }
 
     .contact-section .section-desc {
       color: var(--text-gray);
-      margin-bottom: 56px;
+      margin-bottom: 72px;
       font-size: 1.1rem;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
+    /* Elegant contact grid with dividers */
     .contact-details {
-      display: flex;
-      justify-content: center;
-      gap: 56px;
-      flex-wrap: wrap;
-      margin-bottom: 56px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      margin-bottom: 0;
+      border-top: 1px solid var(--mid-gray);
+      border-bottom: 1px solid var(--mid-gray);
     }
 
     .contact-detail {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
+      padding: 40px 20px;
+      border-right: 1px solid var(--mid-gray);
+      transition: var(--transition);
+    }
+
+    .contact-detail:last-child { border-right: none; }
+
+    .contact-detail:hover {
+      background: rgba(255, 255, 255, 0.03);
     }
 
     .contact-detail i {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       color: var(--white);
-      margin-bottom: 6px;
+      transition: var(--transition);
+    }
+
+    .contact-detail:hover i {
+      transform: translateY(-3px);
     }
 
     .contact-detail span,
     .contact-detail a {
-      font-size: 1rem;
+      font-size: 0.95rem;
       color: var(--text-gray);
       font-weight: 400;
       transition: color var(--transition);
+      letter-spacing: 0.01em;
     }
 
     .contact-detail a:hover { color: var(--white); }
 
-    /* ============ FOOTER ============ */
+    /* ============ FOOTER (elegant, minimal) ============ */
     footer {
       background: var(--pure-black);
-      padding: 56px 0 36px;
+      padding: 72px 0 40px;
       position: relative;
       border-top: 1px solid var(--dark-gray);
     }
@@ -847,77 +842,44 @@
 
     .footer-inner {
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       align-items: center;
-      flex-wrap: wrap;
       gap: 24px;
+      text-align: center;
     }
 
     .footer-brand {
-      font-family: var(--font-display);
-      font-size: 1.2rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--white);
-    }
-
-    .footer-brand.logo {
       font-family: 'Noto Serif', var(--font-display), serif;
-      font-size: 1.3rem;
+      font-size: 1.5rem;
+      font-weight: 700;
       letter-spacing: 0.04em;
-      text-transform: none;
+      color: var(--white);
+      transition: opacity var(--transition);
     }
 
-    .footer-links {
-      display: flex;
-      gap: 32px;
-      flex-wrap: wrap;
-    }
+    .footer-brand:hover { opacity: 0.7; }
 
-    .footer-links a {
+    .footer-tagline {
       font-family: var(--font-display);
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       font-weight: 500;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.24em;
       text-transform: uppercase;
       color: var(--text-gray);
-      transition: color var(--transition);
     }
 
-    .footer-links a:hover { color: var(--white); }
-
-    .footer-social {
-      display: flex;
-      gap: 14px;
-    }
-
-    .footer-social a {
-      width: 44px;
-      height: 44px;
-      border: 2px solid var(--soft-gray);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--white);
-      font-size: 1rem;
-      transition: var(--transition);
-    }
-
-    .footer-social a:hover {
-      background: var(--white);
-      border-color: var(--white);
-      color: var(--pure-black);
+    .footer-divider {
+      width: 100%;
+      max-width: 480px;
+      height: 1px;
+      background: var(--mid-gray);
+      margin: 8px 0;
     }
 
     .footer-bottom {
-      text-align: center;
-      margin-top: 44px;
-      padding-top: 28px;
-      border-top: 1px solid var(--dark-gray);
-      font-size: 0.8rem;
-      color: var(--mid-gray);
-      letter-spacing: 0.08em;
+      font-size: 0.78rem;
+      color: var(--soft-gray);
+      letter-spacing: 0.14em;
       font-family: var(--font-display);
       text-transform: uppercase;
     }
@@ -935,6 +897,12 @@
     }
 
     /* ============ RESPONSIVE ============ */
+    @media (max-width: 1200px) {
+      .hero-inner { gap: 50px; }
+      .hero h1 { font-size: 3.6rem; }
+      .contact-section .section-title { font-size: 2.6rem; }
+    }
+
     @media (max-width: 1024px) {
       .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 60px; }
       .hero-eyebrow, .hero-description, .hero-actions { margin-left: auto; margin-right: auto; }
@@ -944,9 +912,15 @@
       .skills-grid { grid-template-columns: repeat(3, 1fr); }
       .achievements-grid, .education-grid { grid-template-columns: repeat(3, 1fr); }
       .experience-item { grid-template-columns: 200px 1fr; gap: 32px; }
+      .contact-details { grid-template-columns: repeat(2, 1fr); }
+      .contact-detail:nth-child(2) { border-right: none; }
+      .contact-detail:nth-child(1),
+      .contact-detail:nth-child(2) { border-bottom: 1px solid var(--mid-gray); }
     }
 
     @media (max-width: 768px) {
+      .container { width: 94%; padding: 0 4px; }
+
       .menu-toggle { display: block; }
       nav {
         position: absolute;
@@ -963,57 +937,59 @@
       nav ul li { width: 100%; }
       nav a { display: block; padding: 16px 0; border-bottom: 1px solid var(--dark-gray); }
       nav a::after { display: none; }
+
       .hero { padding: 130px 0 80px; min-height: auto; }
       .hero h1 { font-size: 2.8rem; }
       .hero-eyebrow { font-size: 1.2rem; letter-spacing: 0.12em; }
+
       .section { padding: 80px 0; }
+      .section-header { margin-bottom: 48px; }
       .section-title { font-size: 2.2rem; }
       .section-rule { width: 52px; height: 3px; margin-bottom: 22px; }
+
       .skills-grid, .achievements-grid, .education-grid { grid-template-columns: 1fr; }
       .experience-item { grid-template-columns: 1fr; gap: 20px; }
       .exp-meta { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
       .exp-date { margin-bottom: 0; }
-      .contact-details { flex-direction: column; gap: 36px; }
-      .footer-inner { flex-direction: column; text-align: center; }
-      .footer-links { justify-content: center; }
-      .qr-corner {
-        width: 110px;
-        height: 110px;
-        bottom: -20px;
-        right: -20px;
+
+      .contact-section { padding: 90px 0; }
+      .contact-section .section-title { font-size: 2rem; }
+      .contact-section .section-desc { margin-bottom: 48px; }
+      .contact-details { grid-template-columns: 1fr; }
+      .contact-detail {
+        border-right: none;
+        border-bottom: 1px solid var(--mid-gray);
+        padding: 32px 20px;
       }
-      .qr-label {
-        bottom: 92px;
-        right: -12px;
-        font-size: 0.55rem;
-      }
+      .contact-detail:last-child { border-bottom: none; }
+      .contact-detail:nth-child(1),
+      .contact-detail:nth-child(2) { border-bottom: 1px solid var(--mid-gray); }
+
+      footer { padding: 56px 0 32px; }
+      .footer-brand { font-size: 1.3rem; }
     }
 
     @media (max-width: 480px) {
+      body { font-size: 15px; }
       .hero h1 { font-size: 2.2rem; }
-      .hero-eyebrow { font-size: 1rem; letter-spacing: 0.1em; }
-      .hero-eyebrow::before { width: 40px; height: 2px; }
+      .hero-eyebrow { font-size: 0.95rem; letter-spacing: 0.08em; }
+      .hero-eyebrow::before { width: 36px; height: 2px; }
       .hero-actions { flex-direction: column; width: 100%; }
       .hero-actions .btn { width: 100%; justify-content: center; }
-      .portrait-frame { width: 260px; height: 320px; }
+      .portrait-frame { width: 240px; height: 300px; }
       .about-stats { grid-template-columns: 1fr; }
-      .section-title { font-size: 1.8rem; }
-      .stat-number { font-size: 2.4rem; }
-      .skill-number { font-size: 2.2rem; }
-      .achievement-number { font-size: 2rem; }
+      .section-title { font-size: 1.7rem; }
+      .stat-number { font-size: 2.2rem; }
+      .skill-number { font-size: 2rem; }
+      .achievement-number { font-size: 1.9rem; }
       .qr-corner {
-        width: 90px;
-        height: 90px;
-        bottom: -16px;
-        right: -16px;
-        padding: 6px;
+        width: 80px;
+        height: 80px;
+        bottom: -14px;
+        right: -14px;
+        padding: 5px;
       }
-      .qr-label {
-        bottom: 76px;
-        right: -8px;
-        font-size: 0.5rem;
-        padding: 3px 6px;
-      }
+      .contact-section .section-title { font-size: 1.7rem; }
     }
   </style>
 </head>
@@ -1049,7 +1025,6 @@
         <div class="hero-actions">
           <a href="#contact" class="btn btn-white"><i class="fas fa-paper-plane"></i> Get in Touch</a>
           <a href="#experience" class="btn btn-ghost"><i class="fas fa-briefcase"></i> View Experience</a>
-          <a href="resume.pdf" class="btn btn-ghost" download><i class="fas fa-download"></i> Download CV</a>
         </div>
       </div>
       <div class="hero-portrait">
@@ -1060,7 +1035,6 @@
           <a href="resume.pdf" target="_blank" class="qr-corner" aria-label="Scan to download resume">
             <img src="resume-qr.png" alt="QR code for resume download">
           </a>
-          <span class="qr-label">Scan for Resume</span>
         </div>
       </div>
     </div>
@@ -1090,7 +1064,7 @@
   </section>
 
   <section class="section section-charcoal" id="skills">
-    <div class="container"> 
+    <div class="container">
       <div class="section-header reveal">
         <div class="section-rule"></div>
         <h2 class="section-title">Administrative Skills</h2>
@@ -1171,39 +1145,43 @@
     </div>
   </section>
 
+  <!-- CONTACT: single, elegant, no redundant CTA button -->
   <section class="contact-section" id="contact">
     <div class="container contact-inner">
       <div class="section-rule reveal"></div>
       <h2 class="section-title reveal">Let's Work Together</h2>
-      <p class="section-desc reveal">I am open to administrative opportunities, office support roles, and professional collaborations. Feel free to reach out.</p>
+      <p class="section-desc reveal">I am open to administrative opportunities, office support roles, and professional collaborations. Feel free to reach out through any of the channels below.</p>
       <div class="contact-details reveal">
-        <div class="contact-detail"><i class="fas fa-phone"></i><a href="tel:+639535216790">+63 953 521 6790</a></div>
-        <div class="contact-detail"><i class="fas fa-envelope"></i><a href="mailto:joseombrog93@gmail.com">joseombrog93@gmail.com</a></div>
-        <div class="contact-detail"><i class="fab fa-linkedin"></i><a href="https://linkedin.com/in/jose-jr-ombrog" target="_blank">jose-jr-ombrog</a></div>
-        <div class="contact-detail"><i class="fas fa-map-marker-alt"></i><span>Marikina City, Philippines</span></div>
+        <div class="contact-detail">
+          <i class="fas fa-phone"></i>
+          <a href="tel:+639535216790">+63 953 521 6790</a>
+        </div>
+        <div class="contact-detail">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:joseombrog93@gmail.com">joseombrog93@gmail.com</a>
+        </div>
+        <div class="contact-detail">
+          <i class="fab fa-linkedin"></i>
+          <a href="https://linkedin.com/in/jose-jr-ombrog" target="_blank">jose-jr-ombrog</a>
+        </div>
+        <div class="contact-detail">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Marikina City, Philippines</span>
+        </div>
       </div>
-      <a href="mailto:joseombrog93@gmail.com" class="btn btn-white reveal"><i class="fas fa-envelope"></i> Send an Email</a>
     </div>
   </section>
 
+  <!-- FOOTER: minimal, elegant, no duplicate nav or socials -->
   <footer>
     <div class="container">
       <div class="footer-inner">
-        <a href="#home" class="logo footer-brand">Ἰωσήφ Όμβρογκ</a>
-        <div class="footer-links">
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#experience">Experience</a>
-          <a href="#education">Education</a>
-          <a href="#contact">Contact</a>
+        <a href="#home" class="footer-brand">Ἰωσήφ Όμβρογκ</a>
+        <span class="footer-tagline">Administrative Operations Professional</span>
+        <div class="footer-divider"></div>
+        <div class="footer-bottom">
+          &copy; 2026 Jose Demetrial Ombrog Jr. — All rights reserved.
         </div>
-        <div class="footer-social">
-          <a href="https://linkedin.com/in/jose-jr-ombrog" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="mailto:joseombrog93@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        &copy; 2026 Jose Demetrial Ombrog Jr. — Administrative Operations Professional. All rights reserved.
       </div>
     </div>
   </footer>
